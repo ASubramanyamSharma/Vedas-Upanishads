@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Veda Learning — Learn the Eternal Wisdom</title>
+  <meta name="description" content="Veda Learning — Online courses for Vedic chanting, Sanskrit basics, and Vedic studies. Join live classes, get certified, and learn from experienced teachers." />
+  <meta name="theme-color" content="#F5EDE1" />
+
+  <!-- Social sharing -->
+  <meta property="og:title" content="Veda Learning — Learn the Eternal Wisdom" />
+  <meta property="og:description" content="Online Vedic chanting and Vedic studies — live classes, structured courses, and trusted teachers." />
+  <meta property="og:image" content="" />
+  <meta property="og:type" content="website" />
+
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Basic structured data (Organization + Website) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Veda Learning",
+    "url": "https://asubramanyamsharma.github.io/Veda-Learning/",
+    "logo": "",
+    "sameAs": []
+  }
+  </script>
+
+  <style>
+    /* ---------- Root variables ---------- */
+    :root{
+      --bg: #FBF7F1;
+      --card: #FFFFFF;
+      --muted: #6B6B6B;
+      --accent: #B76E00;   /* warm saffron/gold */
+      --accent-2: #F2C777; /* lighter gold */
+      --dark: #222222;
+      --radius: 12px;
+      --max-width: 1100px;
+      --shadow: 0 8px 24px rgba(18,18,18,0.08);
+      --glass: rgba(255,255,255,0.6);
+      --smooth: cubic-bezier(.2,.9,.3,1);
+    }
+
+    /* ---------- Reset & base ---------- */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--dark);
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block; height:auto}
+    .container{max-width:var(--max-width); margin:0 auto; padding:0 20px}
+
+    /* ---------- Navbar / header ---------- */
+    header{
+      position:sticky;
+      top:0;
+      z-index:40;
+      backdrop-filter: blur(6px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo {
+      width:48px;
+      height:48px;
+      border-radius:10px;
+      background: linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;
+      align-items:center; justify-content:center;
+      color:white; font-weight:700;
+      font-family: "Merriweather", serif;
+      box-shadow: var(--shadow);
+    }
+    .brand h1{
+      font-size:16px;
+      margin:0;
+      font-family: "Merriweather", serif;
+      letter-spacing:0.2px;
+    }
+    nav ul{
+      display:flex; gap:18px; align-items:center; margin:0; padding:0; list-style:none;
+    }
+    nav a{color:var(--dark); font-weight:600; font-size:15px}
+    .cta {
+      display:inline-block;
+      background:var(--accent);
+      color:white;
+      padding:10px 16px;
+      border-radius:8px;
+      font-weight:600;
+      box-shadow: 0 6px 18px rgba(183,110,0,0.18);
+    }
+
+    /* Mobile menu */
+    .menu-toggle{display:none; background:none; border:0; font-size:20px}
+    @media (max-width:880px){
+      nav ul{display:none}
+      .menu-toggle{display:inline-flex}
+    }
+
+    /* ---------- Hero ---------- */
+    #hero{
+      padding:48px 0 32px;
+      display:flex;
+      align-items:center;
+      min-height:68vh;
+      position:relative;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1fr 430px;
+      gap:36px;
+      align-items:center;
+    }
+    .hero-left h2{
+      font-family: "Merriweather", serif;
+      font-size: clamp(28px, 4.4vw, 44px);
+      margin:0 0 18px 0;
+      line-height:1.05;
+      color:var(--dark);
+    }
+    .hero-left p{color:var(--muted); font-size:16px; margin:0 0 22px}
+    .hero-ctas{display:flex; gap:14px; flex-wrap:wrap}
+    .secondary{
+      border:1px solid rgba(0,0,0,0.06);
+      padding:10px 14px;
+      border-radius:10px;
+      background:rgba(255,255,255,0.7);
+    }
+    .hero-right{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .card-hero{
+      width:100%;
+      border-radius:16px;
+      padding:18px;
+      background:linear-gradient(180deg,#fff,#fff);
+      box-shadow: var(--shadow);
+      border:1px solid rgba(0,0,0,0.04);
+      text-align:center;
+    }
+    .stat{
+      display:flex; gap:12px; align-items:center; justify-content:center;
+    }
+    .stat strong{font-size:22px; display:block}
+    .decorative {
+      position:absolute;
+      right:-80px;
+      top:10%;
+      width:380px;
+      opacity:0.09;
+      transform:rotate(-12deg);
+      pointer-events:none;
+    }
+    @media (max-width:1080px){
+      .hero-grid{grid-template-columns:1fr 1fr}
+      .decorative{display:none}
+    }
+    @media (max-width:760px){
+      .hero-grid{grid-template-columns: 1fr}
+      .hero-right{order:2}
+      .hero-left{order:1}
+      #hero{padding-top:32px}
+    }
+
+    /* ---------- Sections ---------- */
+    section{padding:56px 0}
+    section h3{
+      font-family: "Merriweather", serif;
+      font-size:22px;
+      margin:0 0 12px;
+    }
+    .muted{color:var(--muted)}
+
+    /* Courses */
+    .grid-courses{
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap:18px;
+    }
+    .course-card{
+      background:var(--card);
+      border-radius:14px;
+      padding:18px;
+      box-shadow: var(--shadow);
+      border:1px solid rgba(0,0,0,0.04);
+      transition: transform 320ms var(--smooth), box-shadow 320ms var(--smooth);
+    }
+    .course-card:hover{ transform:translateY(-6px); box-shadow: 0 18px 36px rgba(16,16,16,0.12) }
+    .course-card h4{margin:0 0 8px; font-size:18px}
+    .course-card p{margin:0 0 12px; color:var(--muted); font-size:15px}
+    .course-card .small{font-size:13px; color:var(--muted)}
+
+    /* Pricing */
+    .pricing{
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap:16px;
+      align-items:start;
+    }
+    .price{
+      background:linear-gradient(180deg,var(--card),#fff);
+      padding:20px;
+      border-radius:12px;
+      border:1px solid rgba(0,0,0,0.04);
+      text-align:center;
+      box-shadow: var(--shadow);
+    }
+    .price .price-amt{font-size:22px; font-weight:700; margin:10px 0}
+    .badge{display:inline-block; background:var(--accent); color:white; padding:6px 10px; border-radius:999px; font-size:13px}
+
+    /* Testimonials */
+    .test-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px}
+    .testimonial{
+      padding:18px;
+      background:linear-gradient(180deg,#fff,#fff);
+      border-radius:12px;
+      border:1px solid rgba(0,0,0,0.04);
+      box-shadow: var(--shadow);
+    }
+    .testimonial p{margin:0 0 10px; color:var(--muted)}
+    .testimonial strong{display:block; font-size:14px}
+
+    /* Contact */
+    .contact-grid{display:grid; grid-template-columns: 1fr 380px; gap:20px; align-items:start}
+    .contact-card{
+      background:var(--card); padding:18px; border-radius:12px; box-shadow: var(--shadow);
+      border:1px solid rgba(0,0,0,0.04);
+    }
+    form{display:flex; flex-direction:column; gap:12px}
+    input, textarea, select{
+      padding:12px;
+      border-radius:8px;
+      border:1px solid rgba(0,0,0,0.08);
+      font-size:15px;
+    }
+    button[type="submit"]{
+      background:var(--accent); color:white; padding:12px; border-radius:10px; border:0; font-weight:700;
+    }
+
+    @media (max-width:920px){
+      .contact-grid{grid-template-columns:1fr}
+      .hero-grid{gap:20px}
+    }
+
+    /* Footer */
+    footer{
+      padding:26px 0; background:linear-gradient(180deg,#151515,#0b0b0b);
+      color:#EFEFEF; margin-top:18px;
+    }
+    .footer-grid{display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap}
+    .socials a{margin-right:12px; color:inherit; opacity:0.9}
+
+    /* small helpers */
+    .center{display:flex; align-items:center; justify-content:center}
+    .subtle{font-size:14px; color:var(--muted)}
+    .shadow-soft{box-shadow:0 10px 30px rgba(2,6,23,0.06)}
+    .lead{font-size:16px; color:var(--muted)}
+  </style>
+</head>
+<body>
+
+  <!-- ====== Header / Navigation ====== -->
+  <header>
+    <div class="container nav" role="navigation" aria-label="Main Navigation">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">V</div>
+        <div>
+          <h1>Veda Learning</h1>
+          <div class="subtle">Online Vedic education</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary">
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">☰</button>
+        <ul id="mainNav">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#pricing">Fees</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="cta" href="#contact">Book Free Trial</a>
+    </div>
+  </header>
+
+  <!-- ====== Hero ====== -->
+  <main>
+    <section id="hero" class="container">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <h2>Learn the Eternal Wisdom of the Vedas — Online, Live & Guided</h2>
+          <p class="lead">Structured courses in Vedic chanting, pronunciation (Shiksha), Sanskrit basics and traditional study. Live classes with experienced teachers, flexible schedules, and progress tracking.</p>
+
+          <div class="hero-ctas">
+            <a class="cta" href="#courses">Explore Courses</a>
+            <a class="secondary" href="#pricing">View Fees</a>
+          </div>
+
+          <div style="margin-top:18px; display:flex; gap:14px; align-items:center;">
+            <div class="stat" style="text-align:left">
+              <div>
+                <strong>250+</strong>
+                <div class="small">Students taught</div>
+              </div>
+            </div>
+            <div class="stat" style="text-align:left">
+              <div>
+                <strong>12</strong>
+                <div class="small">Years of Tradition</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="card-hero">
+            <!-- Replace with an actual image or small video thumbnail; keep it lightweight -->
+            <svg width="260" height="160" viewBox="0 0 260 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="260" height="160" rx="12" fill="url(#g)"/>
+              <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#FFF4E6"/><stop offset="1" stop-color="#FFF"/></linearGradient></defs>
+            </svg>
+            <h4 style="margin-top:14px">Beginner's Batch — Next intake: Monthly</h4>
+            <p class="muted" style="margin-bottom:12px">Small batches, personalized feedback, and recorded sessions.</p>
+            <a class="cta" href="#contact">Enroll Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- decorative svg (subtle) -->
+      <svg class="decorative" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M300 40c80 0 160 80 160 160s-80 160-160 160-160-80-160-160S220 40 300 40z" fill="#D4A858"/>
+      </svg>
+    </section>
+
+    <!-- ====== About ====== -->
+    <section id="about" class="container" aria-labelledby="aboutHeading">
+      <div style="display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:center;">
+        <div>
+          <h3 id="aboutHeading">About Veda Learning</h3>
+          <p class="muted">Veda Learning was founded to make the ancient oral tradition accessible to modern students. Our teachers are trained in traditional shakhas and combine that knowledge with clear, step-by-step pedagogy for online students.</p>
+          <ul style="margin-top:12px; color:var(--muted);">
+            <li>Live interactive classes</li>
+            <li>Small batches & individual corrections</li>
+            <li>Structured curriculum with assessments</li>
+          </ul>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="background:linear-gradient(180deg,#fff,#fff); padding:14px; border-radius:12px; box-shadow:var(--shadow); border:1px solid rgba(0,0,0,0.04)">
+            <strong>Mission</strong>
+            <p class="muted" style="margin:6px 0 0;">Preserve and teach the Vedic oral tradition with clarity, respect and accessibility.</p>
+          </div>
+          <div style="background:linear-gradient(180deg,#fff,#fff); padding:14px; border-radius:12px; box-shadow:var(--shadow); border:1px solid rgba(0,0,0,0.04)">
+            <strong>Method</strong>
+            <p class="muted" style="margin:6px 0 0;">Phonetics-first approach + guided practice sessions and recordings for review.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Courses ====== -->
+    <section id="courses" class="container" aria-labelledby="coursesHeading">
+      <h3 id="coursesHeading">Courses Offered</h3>
+      <p class="muted">Choose a course that matches your level and goals — from introductory chanting to advanced recitation.</p>
+
+      <div style="margin-top:16px" class="grid-courses" role="list">
+        <article class="course-card" role="listitem" aria-labelledby="c1">
+          <h4 id="c1">Vedic Chanting — Beginners</h4>
+          <p>Learn correct pronunciation, basic intonation, and simple chants. Perfect for new learners and kids.</p>
+          <div class="small">Duration: 8 weeks • Live classes</div>
+        </article>
+
+        <article class="course-card" role="listitem" aria-labelledby="c2">
+          <h4 id="c2">Shiksha & Pronunciation</h4>
+          <p>Focused training on phonetics, sandhi, and accent rules that underpin correct chanting.</p>
+          <div class="small">Duration: 6 weeks • Recorded practice</div>
+        </article>
+
+        <article class="course-card" role="listitem" aria-labelledby="c3">
+          <h4 id="c3">Sanskrit for Vedic Study</h4>
+          <p>Basic grammar and vocabulary for reading transliterations and understanding chant meaning.</p>
+          <div class="small">Duration: 10 weeks • Assignments</div>
+        </article>
+
+        <article class="course-card" role="listitem" aria-labelledby="c4">
+          <h4 id="c4">Advanced Recitation</h4>
+          <p>Advanced shakha patterns, speed, and tradition-specific pronunciation coaching.</p>
+          <div class="small">By audition • Mentorship</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====== Pricing / Fees ====== -->
+    <section id="pricing" class="container" aria-labelledby="pricingHeading">
+      <h3 id="pricingHeading">Fees & Plans</h3>
+      <p class="muted">Transparent pricing with discounts for siblings and long-term enrollment.</p>
+
+      <div style="margin-top:16px" class="pricing">
+        <div class="price">
+          <div class="badge">Popular</div>
+          <h4>Beginners</h4>
+          <div class="price-amt">₹2,000</div>
+          <div class="muted">8 sessions • Group classes</div>
+          <div style="margin-top:12px"><a class="cta" href="#contact">Enroll</a></div>
+        </div>
+
+        <div class="price">
+          <h4>Intermediate</h4>
+          <div class="price-amt">₹3,500</div>
+          <div class="muted">10 sessions • Focused training</div>
+          <div style="margin-top:12px"><a class="cta" href="#contact">Enroll</a></div>
+        </div>
+
+        <div class="price">
+          <h4>Advanced / Mentorship</h4>
+          <div class="price-amt">₹6,000</div>
+          <div class="muted">Personal coaching • By audition</div>
+          <div style="margin-top:12px"><a class="cta" href="#contact">Apply</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Testimonials ====== -->
+    <section id="testimonials" class="container" aria-labelledby="testimonialsHeading">
+      <h3 id="testimonialsHeading">What Students Say</h3>
+      <p class="muted">Real feedback from our learners.</p>
+
+      <div style="margin-top:16px" class="test-grid">
+        <blockquote class="testimonial">
+          <p class="muted">"The teachers corrected my pronunciation with patience — I can chant confidently now."</p>
+          <strong>- Anjali R.</strong>
+        </blockquote>
+
+        <blockquote class="testimonial">
+          <p class="muted">"Clear structure and great practice recordings. Highly recommend for beginners."</p>
+          <strong>- Rohit S.</strong>
+        </blockquote>
+
+        <blockquote class="testimonial">
+          <p class="muted">"Small batches meant personal attention — progress felt steady and meaningful."</p>
+          <strong>- Priya K.</strong>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ====== Contact / Enroll ====== -->
+    <section id="contact" class="container" aria-labelledby="contactHeading">
+      <h3 id="contactHeading">Contact & Enroll</h3>
+      <p class="muted">Book a free trial or ask questions — we reply within 24 hours.</p>
+
+      <div class="contact-grid" style="margin-top:16px">
+        <div class="contact-card">
+          <!-- Replace 'submit_form' with your server endpoint or form handler (Netlify, Formspree etc.) -->
+          <form id="contactForm" action="https://example.com/submit_form" method="post" aria-label="Contact form">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" required placeholder="Your name" />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com" />
+
+            <label for="course">Interested course</label>
+            <select id="course" name="course">
+              <option>Vedic Chanting — Beginners</option>
+              <option>Shiksha & Pronunciation</option>
+              <option>Sanskrit for Vedic Study</option>
+              <option>Advanced Recitation</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Any questions or preferred timing"></textarea>
+
+            <button type="submit">Send enquiry</button>
+            <div id="formMsg" class="subtle" style="margin-top:10px; display:none"></div>
+          </form>
+        </div>
+
+        <aside style="display:flex; flex-direction:column; gap:10px;">
+          <div class="contact-card">
+            <strong>Quick Contact</strong>
+            <p class="muted" style="margin:8px 0 0">Email: <a href="mailto:hello@vedalearning.example">hello@vedalearning.example</a></p>
+            <p class="muted">WhatsApp: <a href="tel:+911234567890">+91 12345 67890</a></p>
+          </div>
+
+          <div class="contact-card">
+            <strong>Office Hours</strong>
+            <p class="muted" style="margin:8px 0 0">Mon — Sat: 8:00 AM — 7:00 PM IST</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== Footer ====== -->
+  <footer role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <strong>Veda Learning</strong>
+        <div class="subtle" style="margin-top:6px">Preserving oral tradition through modern online teaching</div>
+      </div>
+
+      <div class="socials">
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="YouTube">YouTube</a>
+      </div>
+    </div>
+
+    <div style="text-align:center; padding-top:16px; color:#cfcfcf; font-size:13px">
+      © <span id="year"></span> Veda Learning • All rights reserved
+    </div>
+  </footer>
+
+  <!-- ====== Minimal JS: menu, smooth scroll, form UX ====== -->
+  <script>
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    menuToggle && menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!expanded));
+      mainNav.style.display = expanded ? 'none' : 'flex';
+      mainNav.style.flexDirection = 'column';
+      mainNav.style.gap = '12px';
+      mainNav.style.padding = '12px';
+      mainNav.style.background = 'linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.85))';
+      mainNav.style.borderRadius = '10px';
+      mainNav.style.position = 'absolute';
+      mainNav.style.right = '20px';
+      mainNav.style.top = '66px';
+      mainNav.style.boxShadow = 'var(--shadow)';
+    });
+
+    // smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const href = this.getAttribute('href');
+        if(href.length > 1){
+          e.preventDefault();
+          const el = document.querySelector(href);
+          if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+          // close mobile menu if open
+          if(window.innerWidth <= 880 && mainNav.style.display === 'flex'){
+            mainNav.style.display = 'none';
+            menuToggle.setAttribute('aria-expanded', 'false');
+          }
+        }
+      })
+    });
+
+    // simple form UX (client-side only). Replace with real handler or integrate e.g. Formspree / Netlify forms.
+    const form = document.getElementById('contactForm');
+    if(form){
+      form.addEventListener('submit', function(e){
+        // prevent actual submit for demo; remove this block when hooking real backend
+        e.preventDefault();
+        const msg = document.getElementById('formMsg');
+        msg.style.display = 'block';
+        msg.textContent = 'Thank you — your enquiry was sent. We will contact you within 24 hours.';
+        form.reset();
+      });
+    }
+  </script>
+</body>
+</html>
